@@ -1022,10 +1022,6 @@ void bar_item_parse_subscribe_message(struct bar_item* bar_item, char* message, 
       begin_receiving_volume_events();
     }
 
-    if (event_flag & UPDATE_BRIGHTNESS_CHANGE) {
-      begin_receiving_brightness_events();
-    }
-
     bar_item->update_mask |= event_flag;
 
     if (!event_flag) {
@@ -1033,5 +1029,6 @@ void bar_item_parse_subscribe_message(struct bar_item* bar_item, char* message, 
     }
 
     event = get_token(&message);
+
   }
 }

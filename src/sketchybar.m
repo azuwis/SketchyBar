@@ -34,7 +34,6 @@ char g_config_file[4096];
 char g_lock_file[MAXLEN];
 bool g_verbose;
 bool g_volume_events;
-bool g_brightness_events;
 
 static int client_send_message(int argc, char **argv) {
     if (argc <= 1) {
@@ -153,7 +152,6 @@ static inline void init_misc_settings(void) {
     CGEnableEventStateCombining(false);
     g_connection = SLSMainConnectionID();
     g_volume_events = false;
-    g_brightness_events = false;
 }
 #pragma clang diagnostic pop
 
